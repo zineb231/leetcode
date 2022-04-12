@@ -1,17 +1,19 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        stringstream a;
-        a << x;
-        string str=a.str();
-        int len=str.length();
-        for( int i=0 ;i< len/2;i++){
-            if(str[i]==str[len-i-1])
-                return true; 
-        };
-                return false;
-            
-        };
-            
+        long reverse_number=0;
+        int xx=x;
+        while(xx >0){
+            int last_digit =xx % 10;
+            reverse_number=reverse_number*10 + last_digit;
+            xx =xx /10;   
+        }
+        if( x==reverse_number){
+            return true;
+        }
+        else{
+        return false;
+        }
         
+    };
 };
